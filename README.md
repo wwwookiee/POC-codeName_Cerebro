@@ -2,6 +2,10 @@
 
 [![CI](https://github.com/wwwookiee/POC-codeName_Cerebro/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/wwwookiee/POC-codeName_Cerebro/actions/workflows/ci.yml)
 
+<p align="center">
+  <img src="docs/demo/cerebro-demo.gif" alt="Cerebro : flux, notes, collections et clé API" width="800">
+</p>
+
 **[English](#english)** · **[Français](#français)**
 
 ## English
@@ -19,6 +23,7 @@ The interface is in French; the labels quoted below are given as they appear on 
 
 ### Contents
 
+- [Screenshots](#screenshots)
 - [Quick start](#quick-start)
 - [The OpenAI key](#the-openai-key)
 - [Usage](#usage)
@@ -28,6 +33,18 @@ The interface is in French; the labels quoted below are given as they appear on 
 - [Under the hood](#under-the-hood)
 - [Development](#development)
 - [Roadmap — SaaS version](#roadmap--saas-version)
+
+### Screenshots
+
+The images and the [video version (MP4, 18 s)](docs/demo/cerebro-demo.mp4) use sample data: the
+channels and videos shown are made up.
+
+| | |
+| --- | --- |
+| <a href="docs/demo/screens/01-flux.png"><img src="docs/demo/screens/01-flux.png" alt="Feed, with a video being processed" width="400"></a><br>Feed, with a video being processed | <a href="docs/demo/screens/02-flux-points-cles.png"><img src="docs/demo/screens/02-flux-points-cles.png" alt="A card's key points" width="400"></a><br>A card's key points |
+| <a href="docs/demo/screens/03-flux-filtre-collection.png"><img src="docs/demo/screens/03-flux-filtre-collection.png" alt="Feed filtered by collection" width="400"></a><br>Feed filtered by collection | <a href="docs/demo/screens/04-notes.png"><img src="docs/demo/screens/04-notes.png" alt="A video's notes" width="400"></a><br>A video's notes |
+| <a href="docs/demo/screens/05-notes-suite.png"><img src="docs/demo/screens/05-notes-suite.png" alt="Notes, key points and transcript" width="400"></a><br>Notes, key points and transcript | <a href="docs/demo/screens/06-collections.png"><img src="docs/demo/screens/06-collections.png" alt="Collections" width="400"></a><br>Collections |
+| <a href="docs/demo/screens/07-cle-api.png"><img src="docs/demo/screens/07-cle-api.png" alt="OpenAI key tab" width="400"></a><br>OpenAI key tab |  |
 
 ### Quick start
 
@@ -323,6 +340,7 @@ mono-utilisateur, pensé pour être lancé quand tu en as besoin.
 
 ### Sommaire
 
+- [Captures d'écran](#captures-décran)
 - [Démarrage rapide](#démarrage-rapide)
 - [La clé OpenAI](#la-clé-openai)
 - [Utilisation](#utilisation)
@@ -332,6 +350,18 @@ mono-utilisateur, pensé pour être lancé quand tu en as besoin.
 - [Sous le capot](#sous-le-capot)
 - [Développement](#développement)
 - [Roadmap — version SaaS](#roadmap--version-saas)
+
+### Captures d'écran
+
+Les images et la [version vidéo (MP4, 18 s)](docs/demo/cerebro-demo.mp4) montrent des données
+d'exemple : les chaînes et vidéos affichées sont inventées.
+
+| | |
+| --- | --- |
+| <a href="docs/demo/screens/01-flux.png"><img src="docs/demo/screens/01-flux.png" alt="Flux, avec une vidéo en cours de traitement" width="400"></a><br>Flux, avec une vidéo en cours de traitement | <a href="docs/demo/screens/02-flux-points-cles.png"><img src="docs/demo/screens/02-flux-points-cles.png" alt="Points clés d'une carte" width="400"></a><br>Points clés d'une carte |
+| <a href="docs/demo/screens/03-flux-filtre-collection.png"><img src="docs/demo/screens/03-flux-filtre-collection.png" alt="Flux filtré par collection" width="400"></a><br>Flux filtré par collection | <a href="docs/demo/screens/04-notes.png"><img src="docs/demo/screens/04-notes.png" alt="Notes d'une vidéo" width="400"></a><br>Notes d'une vidéo |
+| <a href="docs/demo/screens/05-notes-suite.png"><img src="docs/demo/screens/05-notes-suite.png" alt="Notes, points clés et transcription" width="400"></a><br>Notes, points clés et transcription | <a href="docs/demo/screens/06-collections.png"><img src="docs/demo/screens/06-collections.png" alt="Collections" width="400"></a><br>Collections |
+| <a href="docs/demo/screens/07-cle-api.png"><img src="docs/demo/screens/07-cle-api.png" alt="Onglet Clé API" width="400"></a><br>Onglet Clé API |  |
 
 ### Démarrage rapide
 
