@@ -1,0 +1,7 @@
+# Outillage de développement et de CI. Séparé de requirements.txt pour que
+# l'image de production n'embarque ni linter ni framework de test.
+-r requirements.txt
+
+pytest>=8.3
+pytest-asyncio>=0.24
+ruff>=0.7

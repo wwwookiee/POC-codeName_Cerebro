@@ -1,5 +1,7 @@
 # Cerebro
 
+[![CI](https://github.com/wwwookiee/POC-codeName_Cerebro/actions/workflows/ci.yml/badge.svg?branch=dev)](https://github.com/wwwookiee/POC-codeName_Cerebro/actions/workflows/ci.yml)
+
 **[English](#english)** · **[Français](#français)**
 
 ## English
@@ -238,6 +240,31 @@ expose it on a network — anyone could read your data or replace the key.
 The code is mounted into the containers: backend and frontend reload on every change, with no
 rebuild. A rebuild is only needed after a dependency change (`requirements.txt`,
 `package.json`).
+
+#### Tests
+
+The backend has a pytest suite (`backend/tests/`) covering the pipeline helpers (YouTube URL
+parsing, keyword extraction, audio chunking), processing-time estimation, the embedded text and
+OpenAI key handling. It runs without a database or network access: no real OpenAI call is made.
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+ruff check .
+pytest -q
+```
+
+The frontend has no tests; it is checked by typing and building:
+
+```bash
+cd frontend
+npm ci
+npm run typecheck
+npm run build
+```
+
+GitHub Actions CI (`.github/workflows/ci.yml`) runs both jobs on every push and pull request
+to `dev`; the badge at the top of this page shows the result.
 
 #### Without Docker
 
@@ -518,6 +545,32 @@ l'expose pas sur un réseau — n'importe qui pourrait lire tes données ou remp
 Le code est monté dans les conteneurs : backend et frontend se rechargent à chaque
 modification, sans rebuild. Un rebuild n'est nécessaire qu'après un changement de dépendances
 (`requirements.txt`, `package.json`).
+
+#### Tests
+
+Le backend a une suite pytest (`backend/tests/`) qui couvre les fonctions du pipeline (lecture
+des URL YouTube, extraction des mots-clés, découpage audio), l'estimation du temps de
+traitement, le texte embeddé et la gestion de la clé OpenAI. Elle tourne sans base ni accès
+réseau : aucun vrai appel à OpenAI n'est fait.
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+ruff check .
+pytest -q
+```
+
+Le frontend n'a pas de tests ; il est vérifié par le typage et le build :
+
+```bash
+cd frontend
+npm ci
+npm run typecheck
+npm run build
+```
+
+La CI GitHub Actions (`.github/workflows/ci.yml`) lance les deux à chaque push et pull request
+sur `dev` ; le badge en haut de cette page en affiche le résultat.
 
 #### Hors Docker
 

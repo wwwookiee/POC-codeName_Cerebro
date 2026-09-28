@@ -1,6 +1,6 @@
-# Seuls les fichiers nécessaires pour lancer Cerebro en local sont versionnés :
-# docker-compose.yml, README.md, et dans backend/ et frontend/ leur Dockerfile,
-# .dockerignore, manifestes de dépendances, configuration et code.
+# Sont versionnés : de quoi lancer Cerebro en local (docker-compose.yml, et dans
+# backend/ et frontend/ leur Dockerfile, dépendances, configuration et code),
+# plus les tests du backend et la CI qui les exécute.
 
 # --- Secrets et configuration locale -----------------------------------------
 .env
@@ -43,13 +43,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# --- Outillage de développement, inutile à l'exécution -------------------------
-# Tests et CI : présents sur le disque, mais hors du dépôt.
-.github/
-backend/tests/
-backend/requirements-dev.txt
-backend/pyproject.toml
 
 # --- Éditeurs, agents IA et système -------------------------------------------
 .claude/

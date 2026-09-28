@@ -1,0 +1,31 @@
+# Configuration d'outillage uniquement. Pas de table [project] : le backend
+# n'est pas un paquet installable, il est copié tel quel dans l'image.
+
+[tool.ruff]
+# 100 et non 88 : le code est déjà écrit à cette largeur. Le défaut de ruff
+# reformaterait presque tous les fichiers pour un gain nul.
+line-length = 100
+target-version = "py312"
+extend-exclude = ["migrations/versions"]
+
+[tool.ruff.lint]
+# E/F : erreurs pycodestyle et pyflakes. I : ordre des imports, déjà respecté
+# partout dans le code existant.
+select = ["E", "F", "I"]
+ignore = [
+    # Longueur de ligne. Les trois seuls dépassements du dépôt sont des
+    # littéraux : deux messages et la première ligne de SUMMARY_PROMPT, à
+    # 101 caractères. La replier insérerait un saut de ligne dans ce qui est
+    # envoyé au modèle — un changement de comportement qui n'a pas sa place
+    # dans la mise en place d'une CI. `line-length` reste déclaré ci-dessus
+    # pour `ruff format`, si le formatage est adopté plus tard.
+    "E501",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# `backend/` sur le sys.path : sans ça `import app.…` échoue, pytest n'ajoutant
+# que le répertoire des tests.
+pythonpath = ["."]
+# Les fonctions de test `async def` n'ont pas besoin d'un décorateur.
+asyncio_mode = "auto"
