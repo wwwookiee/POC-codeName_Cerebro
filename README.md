@@ -25,6 +25,7 @@ The interface is in French; the labels quoted below are given as they appear on 
 - [Configuration](#configuration)
 - [Under the hood](#under-the-hood)
 - [Development](#development)
+- [Roadmap — SaaS version](#roadmap--saas-version)
 
 ### Quick start
 
@@ -264,6 +265,22 @@ alembic revision --autogenerate -m "describe the change"
 
 `alembic.ini` holds no URL: it is read from `DATABASE_URL`, like the backend does.
 
+### Roadmap — SaaS version
+
+1. **Multi-user foundation.** Move from single-account use to per-user isolation:
+   authentication, partitioning of data and corpus, per-account secret management. This is the
+   seam everything else depends on.
+2. **Industrialized processing.** Take ingestion out of the web process: durable queue,
+   dedicated workers, recovery after failure, idempotency. Today a restart loses in-flight jobs.
+3. **Unit economics.** Lower the marginal cost of an ingestion: alternative acquisition sources,
+   pre-filtering before the paid steps, caching of intermediate results. This is what decides
+   whether the pricing model holds at scale.
+4. **Augmented retrieval.** Make use of the accumulated corpus rather than each document in
+   isolation: vector indexing, hybrid search, source-grounded generation (RAG). Value grows with
+   the volume already ingested.
+5. **Operations.** Usage metering, quotas, observability and per-account cost tracking. Without
+   them, billing relies on estimates rather than measurements.
+
 ---
 
 ## Français
@@ -287,6 +304,7 @@ mono-utilisateur, pensé pour être lancé quand tu en as besoin.
 - [Configuration](#configuration-1)
 - [Sous le capot](#sous-le-capot)
 - [Développement](#développement)
+- [Roadmap — version SaaS](#roadmap--version-saas)
 
 ### Démarrage rapide
 
@@ -526,3 +544,20 @@ alembic revision --autogenerate -m "décrit le changement"
 ```
 
 `alembic.ini` ne contient pas d'URL : elle est lue dans `DATABASE_URL`, comme pour le backend.
+
+### Roadmap — version SaaS
+
+1. **Socle multi-utilisateur.** Passer d'un usage mono-compte à l'isolation par utilisateur :
+   authentification, cloisonnement des données et du corpus, gestion des secrets propres à
+   chaque compte. C'est la couture qui conditionne tout le reste.
+2. **Industrialisation du traitement.** Sortir l'ingestion du processus web : file d'attente
+   durable, workers dédiés, reprise après échec, idempotence. Aujourd'hui un redémarrage perd
+   les traitements en vol.
+3. **Économie unitaire.** Réduire le coût marginal d'une ingestion : sources d'acquisition
+   alternatives, pré-filtrage avant les étapes payantes, mise en cache des résultats
+   intermédiaires. C'est ce qui décide si le modèle tarifaire tient à l'échelle.
+4. **Récupération augmentée.** Exploiter le corpus accumulé plutôt que chaque document
+   isolément : indexation vectorielle, recherche hybride, génération appuyée sur les sources
+   (RAG). La valeur croît avec le volume déjà ingéré.
+5. **Exploitation.** Métrage à l'usage, quotas, observabilité et traçabilité des coûts par
+   compte. Sans ça, la facturation repose sur des estimations plutôt que sur des mesures.
